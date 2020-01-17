@@ -1,0 +1,54 @@
+<mvc:View controllerName="com.federalmogul.Z_MM_SPOR.controller.App" xmlns:mvc="sap.ui.core.mvc" xmlns:html="http://www.w3.org/1999/xhtml"
+	displayBlock="true" xmlns="sap.m">
+	<App id="idAppControl">
+		<pages>
+			<Page title="{i18n>title}">
+				<content>
+					<smartFilterBar:SmartFilterBar 
+						id="smartFilterBar"
+						persistencyKey="SmartFilter_Explored"
+						entitySet="PurchaseOrderRequisitionSet">
+						
+						<smartFilterBar:controlConfiguration>
+							
+							<smartFilterBar:ControlConfiguration key="Badat" conditionType="sap.ui.comp.config.condition.DateRangeType" visibleInAdvancedArea="true">
+							</smartFilterBar:ControlConfiguration>
+							
+							<smartFilterBar:ControlConfiguration key="Lfdat" conditionType="sap.ui.comp.config.condition.DateRangeType" visibleInAdvancedArea="true">
+							</smartFilterBar:ControlConfiguration>
+							
+						</smartFilterBar:controlConfiguration>
+						
+						<smartFilterBar:layoutData>
+							<FlexItemData shrinkFactor="0" />
+						</smartFilterBar:layoutData>
+						
+					</smartFilterBar:SmartFilterBar>
+					
+					<smartTable:SmartTable 
+						id="smartTable"
+						entitySet="PurchaseOrderRequisitionSet"
+						smartFilterId="smartFilterBar"
+						tableType="ResponsiveTable"
+						useExportToExcel="true"
+						beforeExport="onBeforeExport"
+						useVariantManagement="true"
+						useTablePersonalisation="true"
+						header="Purchase Requisitions"
+						showRowCount="true"
+						persistencyKey="SmartTableAnalytical_Explored"
+						enableAutoBinding="true"
+						demandPopin="false"
+						class="sapUiResponsiveContentPadding"
+						showFullScreenButton="true">
+			
+						<smartTable:layoutData>
+							<FlexItemData growFactor="1" baseSize="0%" />
+						</smartTable:layoutData>
+
+					</smartTable:SmartTable>
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>
