@@ -1,0 +1,71 @@
+<edmx:Edmx xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Version="4.0">
+	<edmx:Reference Uri="/sap/opu/odata/sap/Z_MM_SPOR_SRV/$metadata">
+		<edmx:Include Alias="Metadata" Namespace="Z_MM_SPOR_SRV"/>
+	</edmx:Reference>
+	<edmx:Reference Uri="https://wiki.scn.sap.com/wiki/download/attachments/448470968/UI.xml?api=v2">
+		<edmx:Include Alias="UI" Namespace="com.sap.vocabularies.UI.v1"/>
+	</edmx:Reference>
+	<edmx:Reference Uri="https://oasis-tcs.github.io/odata-vocabularies/vocabularies/Org.OData.Core.V1.xml">
+		<edmx:Include Alias="Core" Namespace="Org.OData.Core.V1"/>
+	</edmx:Reference>
+	<edmx:DataServices>
+		<Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="Z_MM_SPOR_Annotations.annotations.annotation0.Z_MM_SPOR_SRV">
+			<Annotations Target="Metadata.PurchaseOrderRequisition">
+				<Annotation Term="UI.SelectionFields">
+					<Collection>
+						<PropertyPath>Banfn</PropertyPath>
+						<PropertyPath>BlckText</PropertyPath>
+						<PropertyPath>Status</PropertyPath>
+						<PropertyPath>Lifnr</PropertyPath>
+						<PropertyPath>Afnam</PropertyPath>
+						<PropertyPath>Ekgrp</PropertyPath>
+						<PropertyPath>Ebeln</PropertyPath>
+						<PropertyPath>TotalPrice</PropertyPath>
+						<PropertyPath>Costcenter</PropertyPath>
+						<PropertyPath>Intorderid</PropertyPath>
+						<PropertyPath>GlAccount</PropertyPath>
+						<PropertyPath>Badat</PropertyPath>
+						<PropertyPath>Lfdat</PropertyPath>
+					</Collection>
+				</Annotation>
+				<Annotation Term="UI.LineItem">
+					<Collection>
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="Banfn"/>
+							<PropertyValue Property="Label" String="{@i18n&gt;PURCHASE_REQUISITION}"/>
+							<Annotation Term="Core.Links">
+								<Collection/>
+							</Annotation>
+						</Record>
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="Badat"/>
+							<PropertyValue Property="Label" String="{@i18n&gt;REQUISITION_DATE}"/>
+						</Record>
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="VendorName"/>
+							<PropertyValue Property="Label" String="{@i18n&gt;VENDOR_NAME}"/>
+						</Record>
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="RnameText"/>
+							<PropertyValue Property="Label" String="{@i18n&gt;REQUISITIONER}"/>
+						</Record>
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="Lfdat"/>
+							<PropertyValue Property="Label" String="{@i18n&gt;DELIVERY_DATE}"/>
+						</Record>
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="TotalPrice"/>
+							<PropertyValue Property="Label" String="{@i18n&gt;TOTAL_PRICE}"/>
+						</Record>
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="Currency"/>
+						</Record>
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="Status"/>
+						</Record>
+					</Collection>
+				</Annotation>
+			</Annotations>
+		</Schema>
+	</edmx:DataServices>
+</edmx:Edmx>

@@ -1,35 +1,32 @@
-<mvc:View controllerName="com.federalmogul.Z_MM_SPOR.controller.App" xmlns:mvc="sap.ui.core.mvc" xmlns:html="http://www.w3.org/1999/xhtml"
-	displayBlock="true" xmlns="sap.m">
+<mvc:View 
+	controllerName="com.federalmogul.Z_MM_SPOR.controller.App"
+	xmlns:html="http://www.w3.org/1999/xhtml"
+	displayBlock="true"
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:smartFilterBar="sap.ui.comp.smartfilterbar"
+	xmlns:smartTable="sap.ui.comp.smarttable">
 	<App id="idAppControl">
 		<pages>
 			<Page title="{i18n>title}">
 				<content>
-					<smartFilterBar:SmartFilterBar 
-						id="smartFilterBar"
-						persistencyKey="SmartFilter_Explored"
-						entitySet="PurchaseOrderRequisitionSet">
-						
+				
+					<smartFilterBar:SmartFilterBar id="smartFilterBar" persistencyKey="SmartFilter_Explored" entitySet="PurchaseOrderRequisitionSet">
 						<smartFilterBar:controlConfiguration>
-							
-							<smartFilterBar:ControlConfiguration key="Badat" conditionType="sap.ui.comp.config.condition.DateRangeType" visibleInAdvancedArea="true">
-							</smartFilterBar:ControlConfiguration>
-							
-							<smartFilterBar:ControlConfiguration key="Lfdat" conditionType="sap.ui.comp.config.condition.DateRangeType" visibleInAdvancedArea="true">
-							</smartFilterBar:ControlConfiguration>
-							
+							<smartFilterBar:ControlConfiguration key="Badat" conditionType="sap.ui.comp.config.condition.DateRangeType" visibleInAdvancedArea="true"></smartFilterBar:ControlConfiguration>
+							<smartFilterBar:ControlConfiguration key="Lfdat" conditionType="sap.ui.comp.config.condition.DateRangeType" visibleInAdvancedArea="true"></smartFilterBar:ControlConfiguration>
 						</smartFilterBar:controlConfiguration>
-						
 						<smartFilterBar:layoutData>
-							<FlexItemData shrinkFactor="0" />
+							<FlexItemData shrinkFactor="0"/>
 						</smartFilterBar:layoutData>
-						
 					</smartFilterBar:SmartFilterBar>
 					
 					<smartTable:SmartTable 
 						id="smartTable"
 						entitySet="PurchaseOrderRequisitionSet"
 						smartFilterId="smartFilterBar"
-						tableType="ResponsiveTable"
+						tableType="Table"
 						useExportToExcel="true"
 						beforeExport="onBeforeExport"
 						useVariantManagement="true"
@@ -41,12 +38,23 @@
 						demandPopin="false"
 						class="sapUiResponsiveContentPadding"
 						showFullScreenButton="true">
-			
-						<smartTable:layoutData>
-							<FlexItemData growFactor="1" baseSize="0%" />
-						</smartTable:layoutData>
-
+						
+						<!--<smartTable:layoutData>-->
+						<!--	<FlexItemData growFactor="1" baseSize="0%"/>-->
+						<!--</smartTable:layoutData>-->
+						
+						<Table id="innerUi5Table" growing="true">
+							<ColumnListItem highlight="{parts:['Status'], formatter:'.formatStatusRowHighlight'}">
+								<!--<cells>-->
+								<!--	<Text text="{ -->
+								<!--			path: 'Status' -->
+								<!--		}" />-->
+								<!--</cells>-->
+							</ColumnListItem>
+						</Table>
+						
 					</smartTable:SmartTable>
+
 				</content>
 			</Page>
 		</pages>
