@@ -2,11 +2,13 @@
 	controllerName="com.federalmogul.Z_MM_SPOR.controller.App"
 	xmlns:html="http://www.w3.org/1999/xhtml"
 	displayBlock="true"
+	height="100%"
+	xmlns:core="sap.ui.core" 
 	xmlns="sap.m"
-	xmlns:core="sap.ui.core"
 	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:smartTable="sap.ui.comp.smarttable"
 	xmlns:smartFilterBar="sap.ui.comp.smartfilterbar"
-	xmlns:smartTable="sap.ui.comp.smarttable">
+	xmlns:si="sap.suite.ui.commons.statusindicator">
 	<App id="idAppControl">
 		<pages>
 			<Page title="{i18n>title}">
@@ -26,7 +28,7 @@
 						id="smartTable"
 						entitySet="PurchaseOrderRequisitionSet"
 						smartFilterId="smartFilterBar"
-						tableType="Table"
+						tableType="ResponsiveTable"
 						useExportToExcel="true"
 						beforeExport="onBeforeExport"
 						useVariantManagement="true"
@@ -38,19 +40,77 @@
 						demandPopin="false"
 						class="sapUiResponsiveContentPadding"
 						showFullScreenButton="true">
-						
-						<!--<smartTable:layoutData>-->
-						<!--	<FlexItemData growFactor="1" baseSize="0%"/>-->
-						<!--</smartTable:layoutData>-->
-						
-						<Table id="innerUi5Table" growing="true">
-							<ColumnListItem highlight="{parts:['Status'], formatter:'.formatStatusRowHighlight'}">
-								<!--<cells>-->
-								<!--	<Text text="{ -->
-								<!--			path: 'Status' -->
-								<!--		}" />-->
-								<!--</cells>-->
-							</ColumnListItem>
+
+						<Table id="innerUi5Table" growing="true" growingScrollToLoad="true" growingThreshold="20" alternateRowColors="true">
+							
+							<columns>
+								
+								<Column id="Badat" hAlign="Begin">
+									<customData>
+										<core:CustomData key="p13nData" value='\{"columnKey": "Badat", "maxLength": "5","columnIndex":"1", "leadingProperty": "Badat"}' />
+									</customData>
+									<Text text="{i18n>REQUISITION_DATE}" />
+								</Column>
+								
+								<Column id="Lfdat" hAlign="Begin">
+									<customData>
+										<core:CustomData key="p13nData" value='\{"columnKey": "Lfdat", "maxLength": "5","columnIndex":"4", "leadingProperty": "Lfdat"}' />
+									</customData>
+									<Text text="{i18n>REQUISITION_DATE}" />
+								</Column>
+								
+								<Column id="TotalPrice" hAlign="Begin">
+									<customData>
+										<core:CustomData key="p13nData" value='\{"columnKey": "TotalPrice", "maxLength": "5","columnIndex":"5", "leadingProperty": "TotalPrice"}' />
+									</customData>
+									<Text text="{i18n>TOTAL_PRICE}" />
+								</Column>
+								
+								<Column id="Status" hAlign="Begin">
+									<customData>
+										<core:CustomData key="p13nData" value='\{"columnKey": "Status", "maxLength": "5","columnIndex":"7", "leadingProperty": "Status"}' />
+									</customData>
+									<Text text="{i18n>STATUS}" />
+								</Column>
+								
+							</columns>
+							
+							<items>
+								
+								<ColumnListItem press="onItemPress" type="Navigation"> 
+									
+									<cells>
+										
+										<Text text="{ 
+											path: 'Badat',
+											formatter:'.formatter.formatShortDate' 
+										}" />
+										
+										<Text text="{ 
+											path: 'Lfdat',
+											formatter:'.formatter.formatShortDate' 
+										}" />
+										
+										<Text text="{ 
+											path: 'TotalPrice',
+											formatter:'.formatter.formatCurrency' 
+										}" />
+										
+										<ObjectStatus
+											text="{ parts:['Status'], formatter:'.formatStatusText'}"
+											state="{ parts:['Status'], formatter:'.formatStatusState'}"
+											icon="{ parts:['Status'], formatter:'.formatStatusIcon'}">
+												<customData>
+													<core:CustomData key="Status" value="Status" writeToDom="true" />
+												</customData>
+										</ObjectStatus>
+										
+									</cells>
+									
+								</ColumnListItem>
+								
+							</items>
+
 						</Table>
 						
 					</smartTable:SmartTable>
