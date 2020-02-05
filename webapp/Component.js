@@ -1,11 +1,11 @@
 sap.ui.define([
 	"sap/ui/core/UIComponent",
 	"sap/ui/Device",
-	"com/federalmogul/Z_MM_SPOR/model/models"
+	"com/federalmogul/Z_MM_SPOR_ANTN/model/models"
 ], function (UIComponent, Device, models) {
 	"use strict";
 
-	return UIComponent.extend("com.federalmogul.Z_MM_SPOR.Component", {
+	return UIComponent.extend("com.federalmogul.Z_MM_SPOR_ANTN.Component", {
 
 		metadata: {
 			manifest: "json"

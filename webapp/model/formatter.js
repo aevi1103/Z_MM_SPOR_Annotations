@@ -31,7 +31,7 @@ sap.ui.define([], function () {
 			const t = sap.ui.getCore().getConfiguration().getLanguage();
 			const r = new sap.ui.core.Locale(t);
 			const n = sap.ui.core.format.DateFormat.getDateInstance({
-				style: "short"
+				style: "medium"
 			}, r).format(new Date(oDate));
 			return n;
 		},
@@ -41,7 +41,7 @@ sap.ui.define([], function () {
 			const lang = sap.ui.getCore().getConfiguration().getLanguage();
 			const locale = new sap.ui.core.Locale(lang);
 						const formattedDate = sap.ui.core.format.DateFormat.getDateInstance({
-				style: "short"
+				style: "medium"
 			}, locale).format(new Date(oDate));
 			return formattedDate;
 		},

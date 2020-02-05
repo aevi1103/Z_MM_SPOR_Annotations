@@ -9,7 +9,7 @@
 		<edmx:Include Alias="Core" Namespace="Org.OData.Core.V1"/>
 	</edmx:Reference>
 	<edmx:DataServices>
-		<Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="Z_MM_SPOR_Annotations.annotations.annotation0.Z_MM_SPOR_SRV">
+		<Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="Z_MM_SPOR_ANTN_Annotations.annotations.annotation0.Z_MM_SPOR_SRV">
 			<Annotations Target="Metadata.PurchaseOrderRequisition">
 				<Annotation Term="UI.SelectionFields">
 					<Collection>

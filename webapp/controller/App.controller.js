@@ -3,7 +3,7 @@ sap.ui.define([
 ], function (BaseController) {
 	"use strict";
 
-	return BaseController.extend("com.federalmogul.Z_MM_SPOR.controller.App", {
+	return BaseController.extend("com.federalmogul.Z_MM_SPOR_ANTN.controller.App", {
 		
 		onInit: function () {
 
@@ -79,9 +79,33 @@ sap.ui.define([
 		},
 		
 		onItemPress: function(oEvt) {
-			
-			console.log('item press', oEvt)
-			
+			const src = oEvt.getSource();
+			this._showObject(src);
+		},
+		
+		_showObject: function (oItem) {
+
+			const sBanfn = oItem.getBindingContext().getProperty("Banfn");
+			if (!sap.hasOwnProperty('ushell')) {
+				// Not in Launchpad
+				window.open("/sap/bc/bsp/sap/z_mm_dpor/index.html");
+			} else {
+				// In Launchpad
+				const oCrossAppNavigator = sap.ushell.Container.getService("CrossApplicationNavigation");
+				const hash = (oCrossAppNavigator && oCrossAppNavigator.hrefForExternal({
+					target: {
+						semanticObject: "PurchaseRequisition",
+						action: "display"
+					},
+					params: {
+						"Banfn": sBanfn,
+						"close": "x"
+					}
+				})) || "";
+
+				const url = window.location.href.split('#')[0] + hash;
+				sap.m.URLHelper.redirect(url, true);
+			}
 		}
 
 	});

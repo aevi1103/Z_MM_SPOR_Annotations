@@ -1,7 +1,7 @@
 /*global QUnit*/
 sap.ui.define([
 	"sap/ui/test/opaQunit",
-	"com/federalmogul/Z_MM_SPOR/test/integration/pages/App"
+	"com/federalmogul/Z_MM_SPOR_ANTN/test/integration/pages/App"
 ], function (opaTest) {
 	"use strict";
 

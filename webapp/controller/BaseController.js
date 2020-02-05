@@ -10,7 +10,7 @@ sap.ui.define([
 	// shortcut for sap.m.URLHelper
 	var URLHelper = mobileLibrary.URLHelper;
 
-	return Controller.extend("com.federalmogul.Z_MM_SPOR.controller.BaseController", {
+	return Controller.extend("com.federalmogul.Z_MM_SPOR_ANTN.controller.BaseController", {
 		
 		formatter: formatter,
 		

@@ -1,6 +1,6 @@
 specVersion: '1.0'
 metadata:
-  name: Z_MM_SPOR
+  name: Z_MM_SPOR_ANTN
 type: application
 resources:
   configuration:

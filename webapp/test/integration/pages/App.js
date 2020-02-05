@@ -1,6 +1,6 @@
 sap.ui.define([
 	"sap/ui/test/Opa5",
-	"com/federalmogul/Z_MM_SPOR/test/integration/pages/Common",
+	"com/federalmogul/Z_MM_SPOR_ANTN/test/integration/pages/Common",
 	"sap/ui/test/actions/Press"
 ], function (Opa5, Common, Press) {
 	"use strict";

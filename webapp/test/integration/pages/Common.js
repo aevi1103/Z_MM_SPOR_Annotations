@@ -4,7 +4,7 @@ sap.ui.define([
 	"use strict";
 
 	function getFrameUrl(sHash, sUrlParameters) {
-		var sUrl = jQuery.sap.getResourcePath("com/federalmogul/Z_MM_SPOR/index", ".html");
+		var sUrl = jQuery.sap.getResourcePath("com/federalmogul/Z_MM_SPOR_ANTN/index", ".html");
 		sHash = sHash || "";
 		sUrlParameters = sUrlParameters ? "?" + sUrlParameters : "";
 
@@ -17,7 +17,7 @@ sap.ui.define([
 		return sUrl + sUrlParameters + sHash;
 	}
 
-	return Opa5.extend("com.federalmogul.Z_MM_SPOR.test.integration.pages.Common", {
+	return Opa5.extend("com.federalmogul.Z_MM_SPOR_ANTN.test.integration.pages.Common", {
 
 		iStartTheApp: function (oOptions) {
 			oOptions = oOptions || {};

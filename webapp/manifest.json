@@ -1,7 +1,7 @@
 {
 	"_version": "1.8.0",
 	"sap.app": {
-		"id": "com.federalmogul.Z_MM_SPOR",
+		"id": "com.federalmogul.Z_MM_SPOR_ANTN",
 		"type": "application",
 		"i18n": "i18n/i18n.properties",
 		"applicationVersion": {
@@ -54,7 +54,7 @@
 	},
 	"sap.ui5": {
 		"rootView": {
-			"viewName": "com.federalmogul.Z_MM_SPOR.view.App",
+			"viewName": "com.federalmogul.Z_MM_SPOR_ANTN.view.App",
 			"type": "XML"
 		},
 		"config": {
@@ -76,7 +76,7 @@
 			"i18n": {
 				"type": "sap.ui.model.resource.ResourceModel",
 				"settings": {
-					"bundleName": "com.federalmogul.Z_MM_SPOR.i18n.i18n"
+					"bundleName": "com.federalmogul.Z_MM_SPOR_ANTN.i18n.i18n"
 				}
 			},
 			"": {
@@ -106,7 +106,7 @@
 				"routerClass": "sap.m.routing.Router",
 				"viewType": "XML",
 				"async": true,
-				"viewPath": "com.federalmogul.Z_MM_SPOR.view",
+				"viewPath": "com.federalmogul.Z_MM_SPOR_ANTN.view",
 				"controlAggregation": "pages",
 				"controlId": "idAppControl",
 				"clearControlAggregation": false
@@ -135,7 +135,7 @@
 		}
 	},
 	"sap.platform.abap": {
-		"uri": "/sap/bc/ui5_ui5/sap/z_mm_spor/webapp",
+		"uri": "/sap/bc/ui5_ui5/sap/z_mm_spor_antn/webapp",
 		"_version": "1.1.0"
 	}
 }
